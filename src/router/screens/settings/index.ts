@@ -30,6 +30,7 @@ import SettingsApparence from "@/views/settings/SettingsApparence";
 import ExternalAliseLogin from "@/views/settings/ExternalAccount/Alise";
 import SettingsMultiService from "@/views/settings/SettingsMultiService";
 import SettingsMultiServiceSpace from "@/views/settings/SettingsMultiServiceSpace";
+import SettingsSupport from "@/views/settings/SettingsSupport";
 
 const settingsScreens = [
   createScreen("Settings", Settings, {
@@ -143,6 +144,9 @@ const settingsScreens = [
   }),
   createScreen("SettingsApparence", SettingsApparence, {
     headerTitle: "Mode d'affichage",
+  }),
+  createScreen("SettingsSupport", SettingsSupport, {
+    headerTitle: "Contacter le support",
   })
 ] as const;
 
