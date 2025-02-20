@@ -249,7 +249,8 @@ const Settings: Screen<"Settings"> = ({ route, navigation }) => {
           icon: <Users />,
           color: "#4bd7ad",
           label: "Contacter le support",
-          onPress: () => openUrl("http://188.165.160.38:4000/fr/submit"),
+          //onPress: () => openUrl("http://188.165.160.38:4000/fr/submit"),
+          onPress: () => navigation.navigate("SettingsSupport"),
         }
       ],
     },
