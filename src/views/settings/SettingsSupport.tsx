@@ -56,7 +56,7 @@ const SettingsSupport = () => {
         paddingTop: 0,
       }}
     >
-      <NativeList inline animated>
+      <NativeList>
         <View
           style={{
             backgroundColor: "#762424",
@@ -73,7 +73,7 @@ const SettingsSupport = () => {
             ⁉️
           </Text>
         </View>
-        <NativeItem animated>
+        <NativeItem>
           <NativeText variant="title">Un problème, une question ?</NativeText>
           <NativeText variant="subtitle">
             Des problèmes sur Papillon ? Des questions par rapport à l'application ? Nous vous répondrons dans les plus brefs délais !
