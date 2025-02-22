@@ -35,7 +35,8 @@ import {
   WandSparkles,
   X,
   Blocks,
-  HelpCircle
+  HelpCircle,
+  Users
 } from "lucide-react-native";
 
 import { NativeIcon, NativeItem, NativeList, NativeListHeader, NativeText } from "@/components/Global/NativeComponents";
@@ -226,16 +227,28 @@ const Settings: Screen<"Settings"> = ({ route, navigation }) => {
           onPress: () => navigation.navigate("ChangelogScreen"),
         },
         {
+          icon: <Info />,
+          color: "#888888",
+          label: "À propos de Papillon",
+          onPress: () => navigation.navigate("SettingsAbout"),
+        }
+      ],
+    },
+    {
+      icon: <Laptop />,
+      label: "Support",
+      tabs: [
+        {
           icon: <HelpCircle />,
           color: "#0E7CCB",
           label: "Besoin d'aide ?",
           onPress: () => openUrl("https://support.papillon.bzh/"),
         },
         {
-          icon: <Info />,
-          color: "#888888",
-          label: "À propos de Papillon",
-          onPress: () => navigation.navigate("SettingsAbout"),
+          icon: <Users />,
+          color: "#4bd7ad",
+          label: "Contacter le support",
+          onPress: () => navigation.navigate("SettingsSupport"),
         }
       ],
     },
