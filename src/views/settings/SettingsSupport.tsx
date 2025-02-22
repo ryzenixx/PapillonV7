@@ -18,7 +18,6 @@ const SettingsSupport = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
-  
 
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -45,13 +44,13 @@ const SettingsSupport = () => {
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
         .map((log) => {
           if (!log.date) return `[${log.type}] ${log.message} (Date inconnue)`;
-      
+
           const logDate = new Date(log.date);
           if (isNaN(logDate.getTime())) return `[${log.type}] ${log.message} (Date invalide)`;
-      
+
           const now = new Date();
           let formattedDate;
-      
+
           if (
             logDate.getDate() === now.getDate() &&
             logDate.getMonth() === now.getMonth() &&
@@ -78,20 +77,20 @@ const SettingsSupport = () => {
               .toString()
               .padStart(2, "0")}`;
           }
-      
+
           return `[${log.type}] ${log.message} (${formattedDate})`;
         })
         .slice(-15)
         .join("<br><br>");
-      
+
       console.log(formattedLogs);
-      
+
       const data = {
         email: email,
         title: subject,
         detail: `𝗠𝗲𝘀𝘀𝗮𝗴𝗲 𝗱𝗲 𝗹'𝘂𝘁𝗶𝗹𝗶𝘀𝗮𝘁𝗲𝘂𝗿:<br>${description}<br><br><br>⬇️ 𝗘𝗿𝗿𝗲𝘂𝗿𝘀 𝗿𝗲́𝗰𝗲𝗻𝘁𝗲𝘀 𝗿𝗲𝗻𝗰𝗼𝗻𝘁𝗿𝗲́𝗲𝘀 𝗽𝗮𝗿 𝗹'𝘂𝘁𝗶𝗹𝗶𝘀𝗮𝘁𝗲𝘂𝗿 𝗱𝗮𝗻𝘀 𝗹'𝗮𝗽𝗽 ⬇️<br><br>${formattedLogs}`,
       };
-  
+
       const response = await fetch("http://188.165.160.38:4000/api/v1/ticket/public/create", {
         method: "POST",
         headers: {
@@ -99,9 +98,9 @@ const SettingsSupport = () => {
         },
         body: JSON.stringify(data),
       });
-  
+
       const result = await response.json();
-  
+
       if (response.ok) {
         navigation.goBack();
         Alert.alert("Succès", "Votre message a bien été envoyé. Veuillez consulter régulièrement vos e-mails pour suivre la réponse.");
