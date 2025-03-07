@@ -91,7 +91,7 @@ const SettingsSupport = () => {
         detail: `𝗠𝗲𝘀𝘀𝗮𝗴𝗲 𝗱𝗲 𝗹'𝘂𝘁𝗶𝗹𝗶𝘀𝗮𝘁𝗲𝘂𝗿:<br>${description}<br><br><br>⬇️ 𝗘𝗿𝗿𝗲𝘂𝗿𝘀 𝗿𝗲́𝗰𝗲𝗻𝘁𝗲𝘀 𝗿𝗲𝗻𝗰𝗼𝗻𝘁𝗿𝗲́𝗲𝘀 𝗽𝗮𝗿 𝗹'𝘂𝘁𝗶𝗹𝗶𝘀𝗮𝘁𝗲𝘂𝗿 𝗱𝗮𝗻𝘀 𝗹'𝗮𝗽𝗽 ⬇️<br><br>${formattedLogs}`,
       };
 
-      const response = await fetch("http://188.165.160.38:4000/api/v1/ticket/public/create", {
+      const response = await fetch("https://menthe-et-cristaux.papillon.bzh/api/v1/ticket/public/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
